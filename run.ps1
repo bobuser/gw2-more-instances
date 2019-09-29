@@ -18,4 +18,3 @@ $han = "Handle.exe"
 $hanexe = Join-Path $gw2path $han
 & $hanexe -accepteula -a "AN-Mutex-Window-Guild Wars 2" | ? { $_ -match 'pid' } | %{ $p = ($_ -split '\s+')[2]; $c = ($_ -split '\s+')[5]; $c = $c -replace ':', ''; & $hanexe -p $p -c $c -y}
 Start-Process  $gw2exe -Credential $Credential
-pause
